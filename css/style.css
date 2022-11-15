@@ -86,6 +86,20 @@ nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man 
     width: 100%;
 }
 
+.card{
+    margin: 1rem;
+}
+
+.card img{
+    border-top-right-radius: 10%;
+    border-top-left-radius: 10%
+}
+
+.indexcard{
+    background-color: white;
+    padding: 1rem;
+    
+}
 
 .section{       /* Huvudfönstret, väljer position för denna och centrerar motiv som standard genom flexbox-lösning. */
     grid-row-start: 2;
@@ -97,6 +111,8 @@ nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man 
     justify-content: center;
     align-items: center;
     }
+
+    #more {display: none;}
 
 
 form{           /* Sätter en mall för de "forms" som vi kommer använda. */
