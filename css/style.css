@@ -21,12 +21,16 @@ body{    /* Väljer bakgrundsbild och vad som ska hända om fönstret är störr
     display:  grid;
 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.3fr 1fr 1fr 0.3fr;
+    grid-template-rows: 6.5rem 1fr 1fr 6.5rem;
     
     gap: 15px;
     
     padding: 10px;
-    box-sizing: border-box;   
+       
+}
+
+*{
+    box-sizing: border-box;
 }
 
 
@@ -41,7 +45,8 @@ body{    /* Väljer bakgrundsbild och vad som ska hända om fönstret är störr
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    flex-direction: row; 
+    flex-direction: row;
+    position: sticky; 
 }
 
 .header img{        /* Gör att bilden av klubbloggan presenteras som en cirkel. */
@@ -52,15 +57,20 @@ body{    /* Väljer bakgrundsbild och vad som ska hända om fönstret är störr
     justify-content: center;
 }
 
+nav {
+    justify-content: center;
+}
+
 nav ul{         /* Denna behövs för länk-effekten som visas när man sveper över länkarna i headern. */
     margin: 0;
     padding: 0;
     list-style: none;
+    justify-content: space-between;
 }
 
 nav li{         /* Denna behövs för länk-effekten som visas när man sveper över länkarna i headern. */
     display: inline-block;
-    margin-left: 70px;
+    padding: 0 0.5rem;
     padding-top: 0.2em;
     font-size: 20px;
     position: relative;
@@ -87,18 +97,37 @@ nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man 
 }
 
 .card{
-    margin: 1rem;
+    /* margin: 1rem; */
+    flex-basis: 50%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .card img{
     border-top-right-radius: 10%;
-    border-top-left-radius: 10%
+    border-top-left-radius: 10%;
+    width: 70%;
 }
 
 .indexcard{
     background-color: white;
-    padding: 1rem;
+     padding: 1rem;
+     width: 70%;
+     height: auto;
+     border-bottom-left-radius: 10%;
+     border-bottom-right-radius: 10%;
+     
+     
     
+}
+
+.cardparagraf{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
 }
 
 .section{       /* Huvudfönstret, väljer position för denna och centrerar motiv som standard genom flexbox-lösning. */
@@ -110,9 +139,18 @@ nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man 
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: auto;
+    gap: 0.5rem 0;
     }
 
-    #more {display: none;}
+
+    .more {display: none;}
+
+    .myBtn{
+        background-color: blue;
+        color: white;
+        
+    }
 
 
 form{           /* Sätter en mall för de "forms" som vi kommer använda. */
@@ -176,6 +214,13 @@ form{           /* Sätter en mall för de "forms" som vi kommer använda. */
     font-size: larger;
 }
 
+.omkl {
+    display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          position: relative;
+}
+
 .omklbilder{    /* Dessa placerar bilderna och länkarna centrerat i min section med avstånd emellan dem */
     margin: 0px;
     display: flex;
@@ -200,13 +245,15 @@ form{           /* Sätter en mall för de "forms" som vi kommer använda. */
 }
 
 .omklbilder img{
+    width: 70%;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-radius: 50%;
     margin: auto;
-    border-style: groove;
+    border-style: solid;
     text-align: center;
 }
 
@@ -233,24 +280,72 @@ a:active{
     color: brown;
 }
 
-/* For desktop: */
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class*="col-"] {
-    width: 100%;
+@media (max-width: 700px) {
+    .container {grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 6.5rem 1fr 1fr 4rem;}
+
+
+
+  .section  {
+    flex-direction: column;
+    justify-content: flex-start;
+    font: 0.8em sans-serif;
+    grid-column-end: span 5;
+    overflow-y: scroll;
   }
 
+  .omkl {
+    flex-direction: column;
+  }
+  .section .card {
+    overflow-y: visible;
+  }
+
+  .omklbilder {
+    flex-direction: column;
+    
+  }
+
+  .omklbilder img {
+    width: 30%;
+  }
+
+  .omklbilder h3 {
+    flex-direction: column;
+    font-size: x-small;
+    padding: 0.5rem;
+    } 
+  
+  .header {
+    font-size: x-small;
+    margin-left: 0;
+  }
+
+  .header a {
+    font-size: x-small;
+  }
+
+  .header img {
+    width: 10%;
+    height: auto;
+  }
+
+  .nav li {
+    margin-left: 0;
+  }
+
+   .footer {
+    font-size: x-small;
+  }
+
+  .footer img {
+    width: 10%;
+    height: auto;
+  }
+
+  .aside {
+    visibility: hidden;
+  }
+  
 }
