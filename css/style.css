@@ -33,12 +33,15 @@ body{    /* Väljer bakgrundsbild och vad som ska hända om fönstret är störr
     box-sizing: border-box;
 }
 
-
+.headers {
+    grid-column-start: 1;
+    grid-column-end: 5 span;
+    background: rgb(212, 85, 76,.5);
+}
 
 .header{    /* Väljer position för headern och tar en "grusfärgad" bakgrundsfärg som jag väljer att göra lite genomskinnlig. Anpassar så att bilder hamnar där jag vill.*/
     grid-column-start: 1;
     grid-column-end: 5 span;
-    background: rgb(212, 85, 76,.5);
     color: black; 
     font-size: 40px;
     display: flex;
@@ -55,6 +58,47 @@ body{    /* Väljer bakgrundsbild och vad som ska hända om fönstret är störr
     margin: 0.5rem;
     display: flex;
     justify-content: center;
+}
+
+.navbar2 {
+    visibility: hidden;
+    position: absolute;    
+}
+
+.navbar2 ul {
+    display: flex;
+    justify-content: center;
+    list-style: none
+}
+
+.my-button {
+    background-color: transparent;
+    border: 10px;
+    color: black;
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: 32px;
+    float: left;
+    line-height: 70px;
+    display: none;
+}
+  
+  .my-button:focus {
+    outline: none;
+  }
+
+  .navbar2 ul li {
+    padding: 20px 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar2 ul li:hover {
+    text-decoration: underline;
+    text-decoration-color: red;
 }
 
 nav {
@@ -169,7 +213,7 @@ form{           /* Sätter en mall för de "forms" som vi kommer använda. */
 
 .aside{         /* Väljer position för vår aside. samt bakgrund och textformat. */
     grid-row-start: 2;
-    grid-row-end: 4;
+    grid-row-end: span3;
     grid-column-start: 5;
     grid-column-end: 6;
     text-align: center;
@@ -197,7 +241,6 @@ form{           /* Sätter en mall för de "forms" som vi kommer använda. */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
     text-align: center; 
     align-items: center;
 }
@@ -283,7 +326,7 @@ a:active{
 
 @media (max-width: 700px) {
     .container {grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 6.5rem 1fr 1fr 4rem;}
+        grid-template-rows: 4rem 1fr 1fr 4rem;}
 
 
 
@@ -318,17 +361,39 @@ a:active{
     } 
   
   .header {
-    font-size: x-small;
-    margin-left: 0;
+    visibility: hidden;
   }
 
-  .header a {
-    font-size: x-small;
+  .navbar2 {
+    grid-column: 1 / span 5;
+    display: flex;
+    flex-direction: column;
+    visibility: visible;
+    align-items: flex-start;   
+        
   }
 
-  .header img {
+  .navbar2 ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    
+  }
+
+  .navbar2 ul.show {
+    display: flex;
+    background: rgb(212, 85, 76,.5);
+    margin-top: 0;
+    padding-inline-start: 0px;
+  }
+
+  .navbar2 img {
     width: 10%;
-    height: auto;
+    height: auto;    
+  }
+
+  .my-button {
+    display: block;       
   }
 
   .nav li {
