@@ -176,7 +176,7 @@ nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man 
 
 .section{       /* Huvudfönstret, väljer position för denna och centrerar motiv som standard genom flexbox-lösning. */
     grid-row-start: 2;
-    grid-row-end: span 2;
+    grid-row-end: span 3;
     grid-column-start: 1;
     grid-column-end: span 4;
     
