@@ -1,416 +1,455 @@
-
 body{    /* Väljer bakgrundsbild och vad som ska hända om fönstret är större än bilden, samt omger fänstret med en svart tunn ram.*/
     
-    outline: 2px solid black;
-    margin: 0;
-    background-image: url(../img/background1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+  outline: 2px solid black;
+  margin: 0;
+  background-image: url(../img/background1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 
 .container{     /* Sätter storleken på sidan, textformat, lägger upp sidan enligt ett gridupplägg med, header, aside och footer. 
-                Lägger in ett litet gap mellan dessa. Skapar lite marginal mellan kanten och innehållet*/
-    width: 100vw;
-    height: 100vh;
-    
-    font-family: 'Quicksand', sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    
-    display:  grid;
+              Lägger in ett litet gap mellan dessa. Skapar lite marginal mellan kanten och innehållet*/
+  width: 100vw;
+  height: 100vh;
+  
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  
+  display:  grid;
 
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 6.5rem 1fr 1fr 6.5rem;
-    
-    gap: 15px;
-    
-    padding: 10px;
-       
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 6.5rem 1fr 1fr 6.5rem;
+  
+  gap: 15px;
+  
+  padding: 10px;
+     
 }
 
 *{
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .headers {
-    grid-column-start: 1;
-    grid-column-end: 5 span;
-    background: rgb(212, 85, 76,.5);
+  grid-column-start: 1;
+  grid-column-end: 5 span;
+  background: rgb(212, 85, 76,.5);
 }
 
 .header{    /* Väljer position för headern och tar en "grusfärgad" bakgrundsfärg som jag väljer att göra lite genomskinnlig. Anpassar så att bilder hamnar där jag vill.*/
-    grid-column-start: 1;
-    grid-column-end: 5 span;
-    color: black; 
-    font-size: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    flex-direction: row;
-    position: sticky; 
+  grid-column-start: 1;
+  grid-column-end: 5 span;
+  color: black; 
+  font-size: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  position: sticky; 
 }
 
+.header-mini{
+  visibility: hidden;
+  position: absolute;
+}
+
+.minibild{
+  visibility: hidden;
+  border-radius: 50%;
+  height: 5rem; 
+  margin: 0.5rem;
+}
+
+i{
+  color: white;
+  }
+
 .header img{        /* Gör att bilden av klubbloggan presenteras som en cirkel. */
-    border-radius: 50%;
-    height: 5rem; 
-    margin: 0.5rem;
-    display: flex;
-    justify-content: center;
+  border-radius: 50%;
+  height: 5rem; 
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar2 {
-    visibility: hidden;
-    position: absolute;    
+  visibility: hidden;
+  position: absolute;    
 }
 
 .navbar2 ul {
-    display: flex;
-    justify-content: center;
-    list-style: none
+  display: flex;
+  justify-content: center;
+  list-style: none
 }
 
 .my-button {
-    background-color: transparent;
-    border: 10px;
-    color: black;
-    cursor: pointer;
-    font-size: 30px;
-    margin-left: 32px;
-    float: left;
-    line-height: 70px;
-    display: none;
+  background-color: transparent;
+  border: 10px;
+  color: black;
+  cursor: pointer;
+  font-size: 30px;
+  margin-left: 32px;
+  float: left;
+  line-height: 70px;
+  display: none;
+  padding: 0;
 }
-  
-  .my-button:focus {
-    outline: none;
-  }
 
-  .navbar2 ul li {
-    padding: 20px 20px;
+.my-button:focus {
+  outline: none;
+}
+
+.navbar2 ul li {
+  padding: 20px 20px;
 }
 
 .navbar ul li a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .navbar2 ul li:hover {
-    text-decoration: underline;
-    text-decoration-color: red;
+  text-decoration: underline;
+  text-decoration-color: red;
 }
 
 nav {
-    justify-content: center;
+  justify-content: center;
 }
 
 nav ul{         /* Denna behövs för länk-effekten som visas när man sveper över länkarna i headern. */
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: space-between;
 }
 
 nav li{         /* Denna behövs för länk-effekten som visas när man sveper över länkarna i headern. */
-    display: inline-block;
-    padding: 0 0.5rem;
-    padding-top: 0.2em;
-    font-size: 20px;
-    position: relative;
-    text-transform: uppercase;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: inline-block;
+  padding: 0 0.5rem;
+  padding-top: 0.2em;
+  font-size: 20px;
+  position: relative;
+  text-transform: uppercase;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 nav a::before{  /* Denna behövs för länk-effekten som visas när man sveper över länkarna i headern. */
-    content: '';
-    display: block;
-    height: 5px;
-    width: 100%;
-    background-color: darkblue;
-    
-    position: absolute;
-    top: 0;
-    width: 0%;
+  content: '';
+  display: block;
+  height: 5px;
+  width: 100%;
+  background-color: rgb(7, 61, 208);
+  
+  position: absolute;
+  top: 0;
+  width: 0%;
 
-    transition: all ease-in-out 200ms;
+  transition: all ease-in-out 200ms;
 }
 
 nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man sveper över länkarna i headern. */
-    width: 100%;
+  width: 100%;
 }
 
 .card{
-    /* margin: 1rem; */
-    flex-basis: 50%;
-    overflow-y: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-
+  /* margin: 1rem; */
+  flex-basis: 50%;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 .card img{
-    border-top-right-radius: 10%;
-    border-top-left-radius: 10%;
-    width: 70%;
+  border-top-right-radius: 10%;
+  border-top-left-radius: 10%;
+  width: 70%;
+  
 }
 
 .indexcard{
-    background-color: white;
-     padding: 1rem;
-     width: 70%;
-     height: auto;
-     border-bottom-left-radius: 10%;
-     border-bottom-right-radius: 10%;
-     
-     
-    
+  background-color: white;
+   padding: 1rem;
+   width: 70%;
+   height: auto;
+   border-bottom-left-radius: 10%;
+   border-bottom-right-radius: 10%;  
 }
 
 .cardparagraf{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
 }
 
 .section{       /* Huvudfönstret, väljer position för denna och centrerar motiv som standard genom flexbox-lösning. */
-    grid-row-start: 2;
-    grid-row-end: span 3;
-    grid-column-start: 1;
-    grid-column-end: span 4;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: auto;
-    gap: 0.5rem 0;
-    }
+  grid-row-start: 2;
+  grid-row-end: span 3;
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  gap: 0.5rem 0;
+  }
 
 
-    .more {display: none;}
+  .more {display: none;}
 
-    .myBtn{
-        background-color: blue;
-        color: white;
-        
-    }
+  .myBtn{
+      background-color: blue;
+      color: white;
+      
+  }
 
 
 form{           /* Sätter en mall för de "forms" som vi kommer använda. */
-    width: auto;
-    height: auto;
-    line-height: 1.6;
-    background-color: rgb(212, 85, 76,.5);
-    color:white;
-    border-color: white;
-    border-style: groove;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 1rem;
-    border-radius: 10%;
+  width: auto;
+  height: auto;
+  line-height: 1.6;
+  background-color: rgb(212, 85, 76,.5);
+  color:white;
+  border-color: white;
+  border-style: groove;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 1rem;
+  border-radius: 10%;
 }   
 
 
 .aside{         /* Väljer position för vår aside. samt bakgrund och textformat. */
-    grid-row-start: 2;
-    grid-row-end: span3;
-    grid-column-start: 5;
-    grid-column-end: 6;
-    text-align: center;
-    align-items: center;
-    background: rgb(212, 85, 76,.5);
-    color: yellow; 
-    font-size: 40px;
+  grid-row-start: 2;
+  grid-row-end: span3;
+  grid-column-start: 5;
+  grid-column-end: 6;
+  text-align: center;
+  align-items: center;
+  background: rgb(212, 85, 76,.5);
+  color: yellow; 
+  font-size: 40px;
 }
 
 .aside img{     /* Lägger bilder och text centrerat i vår aside */
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 .aside h6{
-    margin: auto;
+  margin: auto;
 }
 
 
 .footer{        /* Väljer position för vår footer, samt bakgrund, textformat och centrerar allt med flexbox-lösning. */
-    grid-column: 1 / span 5;
-    background: rgb(212, 85, 76,.5);
-    color: white; 
-    font-size: 30px;
-    text-shadow: 2px 2px rgb(16, 31, 168);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: center; 
-    align-items: center;
+  grid-column: 1 / span 5;
+  background: rgb(212, 85, 76,.5);
+  color: white; 
+  font-size: 30px;
+  text-shadow: 2px 2px rgb(16, 31, 168);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center; 
+  align-items: center;
 }
 
 .footer img{    /* Placerar loggan rätt och presenterar den i rätt storlek. */
-    border-radius: 50%;
-    height: 5rem; 
-    margin: 0.5rem;
-    display: flex;
-    justify-content: center;
+  border-radius: 50%;
+  height: 5rem; 
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .footertext{        /* Sätter textstorlek i footern */
-    font-size: larger;
+  font-size: larger;
 }
 
 .omkl {
-    display: flex;
-          flex-direction: row;
-          justify-content: space-evenly;
-          position: relative;
+  display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        position: relative;
 }
 
 .omklbilder{    /* Dessa placerar bilderna och länkarna centrerat i min section med avstånd emellan dem */
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-    text-align: center;
-    align-items: center;
-    flex-basis: 20%;
-    
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  text-align: center;
+  align-items: center;
+  flex-basis: 20%;
+  
 }
 
 .omklbilder h3{
-    display: flex;
-    width: fit-content;
-    padding: 1rem;
-    background-color: rgb(212, 85, 76, 0.5);
-    color: white;
-    border-color: white;
-    border-style: groove;
-    border-radius: 10%;
-    font-size: large;
+  display: flex;
+  width: fit-content;
+  padding: 1rem;
+  background-color: rgb(212, 85, 76, 0.5);
+  color: white;
+  border-color: white;
+  border-style: groove;
+  border-radius: 10%;
+  font-size: large;
 }
 
 .omklbilder img{
-    width: 70%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 50%;
-    margin: auto;
-    border-style: solid;
-    text-align: center;
+  width: 70%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50%;
+  margin: auto;
+  border-style: solid;
+  text-align: center;
 }
 
 
 /* Nedanstånde väljer format för länkar på sidan */
 
 a:link{
-    text-decoration: none;
-    color: yellow;
+  text-decoration: none;
+  color: yellow;
 }
 
 a:visited{
-    text-decoration: none;
-    color: yellow;
+  text-decoration: none;
+  color: yellow;
 }
 
 a:hover{
-    text-decoration: none;
-    color:yellowgreen;
+  text-decoration: none;
+  color:yellowgreen;
 }
 
 a:active{
-    text-decoration: none;
-    color: brown;
+  text-decoration: none;
+  color: brown;
 }
 
 
 @media (max-width: 700px) {
-    .container {grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 4rem 1fr 1fr 4rem;}
+  .container {grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 4rem 1fr 1fr 4rem;}
 
 
 
-  .section  {
-    flex-direction: column;
-    justify-content: flex-start;
-    font: 0.8em sans-serif;
-    grid-column-end: span 5;
-    overflow-y: scroll;
-  }
+.section  {
+  flex-direction: column;
+  justify-content: flex-start;
+  font: 0.8em sans-serif;
+  grid-column-end: span 5;
+  overflow-y: scroll;
+}
 
-  .omkl {
-    flex-direction: column;
-  }
-  .section .card {
-    overflow-y: visible;
-  }
+.omkl {
+  flex-direction: column;
+}
+.section .card {
+  overflow-y: visible;
+}
 
-  .omklbilder {
-    flex-direction: column;
-    
-  }
-
-  .omklbilder img {
-    width: 30%;
-  }
-
-  .omklbilder h3 {
-    flex-direction: column;
-    font-size: x-small;
-    padding: 0.5rem;
-    } 
+.omklbilder {
+  flex-direction: column;
   
-  .header {
-    visibility: hidden;
+}
+
+.omklbilder img {
+  width: 30%;
+}
+
+.omklbilder h3 {
+  flex-direction: column;
+  font-size: x-small;
+  padding: 0.5rem;
+  } 
+
+  .header-mini{
+visibility: visible;
+position: relative;
   }
 
-  .navbar2 {
-    grid-column: 1 / span 5;
-    display: flex;
-    flex-direction: column;
-    visibility: visible;
-    align-items: flex-start;   
-        
+.header {
+  visibility: hidden;
   }
 
-  .navbar2 ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    
+  .headers{
+    min-height: 4rem;
   }
 
-  .navbar2 ul.show {
-    display: flex;
-    background: rgb(212, 85, 76,.5);
-    margin-top: 0;
-    padding-inline-start: 0px;
-  }
+.navbar2 {
+  grid-column: 1 / span 5;
+  display: flex;
+  flex-direction: column;
+  visibility: visible;
+  align-items: flex-start;   
+      
+}
 
-  .navbar2 img {
-    width: 10%;
-    height: auto;    
-  }
-
-  .my-button {
-    display: block;       
-  }
-
-  .nav li {
-    margin-left: 0;
-  }
-
-   .footer {
-    font-size: x-small;
-  }
-
-  .footer img {
-    width: 10%;
-    height: auto;
-  }
-
-  .aside {
-    visibility: hidden;
-  }
+.navbar2 ul {
+  display: none;
+  flex-direction: column;
+  width: 100%;
   
+  
+}
+
+.minibild{
+  visibility: visible;
+  position: absolute;
+  right: 0;
+  width: 10%;
+  border-radius: 50%;
+  height: auto;
+  margin: 0.5rem;
+  
+  
+}
+
+.navbar2 ul.show {
+  display: flex;
+  background: rgb(212, 85, 76,.5);
+  margin-top: 0;
+  padding-inline-start: 0px;
+}
+
+.navbar2 img {
+  width: 10%;
+  height: auto;    
+}
+
+.my-button {
+  display: block;       
+}
+
+.nav li {
+  margin-left: 0;
+}
+
+ .footer {
+  font-size: x-small;
+  min-height: 4rem;
+}
+
+.footer img {
+  width: 10%;
+  height: auto;
+}
+
+.aside {
+  visibility: hidden;
+}
+
+
+
 }

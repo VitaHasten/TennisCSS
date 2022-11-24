@@ -1,4 +1,3 @@
-
 function buttonOne(){
   myFunction("one");
 }
@@ -38,5 +37,6 @@ button.addEventListener('click', () => {
   nav.classList.toggle('show');
 });
 console.log(button.innerHTML);
+
 
   

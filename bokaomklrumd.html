@@ -18,16 +18,19 @@
   <body>
     <div class="container">
       <div class="headers">
-        <div class="navbar2">
-          <button class="my-button" id="my-button">
-            <i class="fas fa-bars"></i>
-          </button>
-          <ul id="mynav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="omkl.html">Omklädningsrum</a></li>
-            <li><a href="baninfo.html">Baninformation</a></li>
-            <li><a href="kalender.html">Kalender</a></li>
-          </ul>
+        <div class="header-mini">
+          <div class="navbar2">
+            <button class="my-button" id="my-button">
+              <i class="far fa-bars"></i>
+            </button>
+            <ul id="mynav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="omkl.html">Omklädningsrum</a></li>
+              <li><a href="baninfo.html">Baninformation</a></li>
+              <li><a href="kalender.html">Kalender</a></li>
+            </ul>
+          </div>
+          <img src="img/huvudsida.png" alt="Klubbloggan" class="minibild" />
         </div>
         <div class="header">
           <img src="img/huvudsida.png" alt="Klubbloggan" />
@@ -55,7 +58,7 @@
               name="tid"
               min="07:00"
               max="20:00"
-              step="120"
+              step="1800"
               required
             />
           </div>
@@ -82,10 +85,10 @@
             />
           </div>
 
-          <div><input type="reset" /> <input type="submit" /></div>
+          <div><input type="submit" />&emsp;<input type="reset" /></div>
           <h3
             style="
-              color: black;
+              color: yellow;
               font-family: Lucida Console;
               text-align: center;
             "
