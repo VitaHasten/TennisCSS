@@ -173,6 +173,12 @@ nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man 
     
 }
 
+.okKnapp:hover {
+  text-decoration: none;
+  color:white;
+  background: #6fd649;
+}
+
 .indexcard{
   background-color: white;
    padding: 0rem 1rem 1rem 1rem;
@@ -201,6 +207,19 @@ nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man 
   overflow: auto;
   gap: 0.5rem 0;
   }
+
+  .sectionIndex{       /* Huvudfönstret, väljer position för denna och centrerar motiv som standard genom flexbox-lösning. */
+    grid-row-start: 2;
+    grid-row-end: span 3;
+    grid-column-start: 1;
+    grid-column-end: span 4;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    gap: 0.5rem 0;
+    }
 
   #root{
     height: 100%;
@@ -258,7 +277,7 @@ color: #fff;
   width: 40%;
   margin-top: 2rem;
   padding: 0.5rem;
-background: #6fd649;
+background-color: rgb(111, 176, 31);
 color: #fff;
 border: 0;
 outline: 0;
@@ -406,6 +425,7 @@ a:active{
 .card {
   margin-bottom: 2rem;
   margin-top: 2rem;
+  overflow-y: visible;
 }
 
 .section  {
@@ -424,8 +444,6 @@ a:active{
   grid-column-end: span 5;
   overflow-y: scroll;
 }
-
-
 
 .omkl {
   flex-direction: column;

@@ -56,7 +56,13 @@
         <form name="formOne" id="formOne" onsubmit="{ validateForm()}">
           <div>
             <label for="sport1">Jag vill spela:</label>
-            <input type="radio" id="sport1" name="sport" required />Tennis
+            <input
+              type="radio"
+              id="sport1"
+              name="sport"
+              required
+              value="Tennis"
+            />Tennis
             <input type="radio" id="sport2" name="sport" required />Padel
             <input type="radio" id="sport3" name="sport" required />Badminton
           </div>
@@ -64,9 +70,9 @@
           <div>
             <label for="speltid">Spellängd timmar:</label>
             <select id="speltid" name="speltid">
-              <option value="ett">1</option>
-              <option value="tva">2</option>
-              <option value="tre">3</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
             </select>
           </div>
 
@@ -128,7 +134,11 @@
           <img src="/img/check.png" />
           <h2>Tack!</h2>
           <p>Din bokning är härmed bekräftad!</p>
-          <button type="button" onclick="closePopup()">OK</button>
+          <hr />
+          <span id="resultat"></span>
+          <button type="button" class="okKnapp" onclick="closePopup()">
+            OK
+          </button>
         </div>
       </div>
 

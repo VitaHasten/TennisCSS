@@ -44,20 +44,21 @@ nav.classList.toggle('show');
 
 function validateForm() {
   event.preventDefault();
-  let a = document.forms["formOne"]["fname"].value;
+  // let a = document.forms["formOne"]["fname"].value;
   
-  if (a == "") {
-    alert("Förnamn saknas...");
-    return false;
-  }
+  // if (a == "") {
+  //   alert("Förnamn saknas...");
+  //   return false;
+  // }
 
-  let b = document.forms["formOne"]["lname"].value;
-  if (b == "") {
-    alert("Efternamn saknas...");
-    return false;
-  }
+  // let b = document.forms["formOne"]["lname"].value;
+  // if (b == "") {
+  //   alert("Efternamn saknas...");
+  //   return false;
+  // }
 
   let c = document.forms["formOne"]["phone"].value;
+  console.log(!c.length == 10);
   if (!(c.length == 10)) {
     Swal.fire({
       icon: 'error',
@@ -67,9 +68,6 @@ function validateForm() {
     return false;
   }
 
-  
-
-
   else
   {
     openPopup();
@@ -78,22 +76,25 @@ function validateForm() {
 }
 
 
+function openPopup(){
 
 let popup = document.getElementById("popup")
 
-function openPopup(){
-console.log("openpopup körs");
+let namnTd=document.getElementById("fname").value+(" ")+document.getElementById("lname").value;
+let sportTd=document.getElementById("sport1").value;
+let speltidTd=document.getElementById("speltid").value;
+let datumTd=document.getElementById("datum").value;
+let tidTd=document.getElementById("tid").value;
+let phoneTd=document.getElementById("phone").value;
+
 popup.classList.add("open-popup")
+
+const resultat = document.getElementById("resultat");
+resultat.innerHTML="Namn: "+namnTd+"<br/>"+"Sport: "+sportTd+"<br/>"+"Spellängd: "+speltidTd+" h"+"<br/>"+"Datum: "+datumTd+"<br/>"+"Tid: "+tidTd+"<br/>"+"Mobilnummer: "+phoneTd+"<br/>";
+
 }
 
 function closePopup(){
   popup.classList.remove("open-popup")
 }
-
-
-
-
-
-
-
   
