@@ -33,14 +33,17 @@ body{    /* Väljer bakgrundsbild och vad som ska hända om fönstret är störr
 }
 
 .headers {
-  grid-column-start: 1;
-  grid-column-end: 5 span;
-  background: rgb(212, 85, 76,.5);
+  visibility: hidden;
+  position: absolute;
+  }
+
+.mynav{
+  flex-direction: column;
 }
 
 .header{    /* Väljer position för headern och tar en "grusfärgad" bakgrundsfärg som jag väljer att göra lite genomskinnlig. Anpassar så att bilder hamnar där jag vill.*/
   grid-column-start: 1;
-  grid-column-end: 5 span;
+  grid-column: span 5;
   color: black; 
   font-size: 40px;
   display: flex;
@@ -48,12 +51,9 @@ body{    /* Väljer bakgrundsbild och vad som ska hända om fönstret är störr
   align-items: center;
   text-align: center;
   flex-direction: row;
-  position: sticky; 
-}
-
-.header-mini{
-  visibility: hidden;
-  position: absolute;
+  position: sticky;
+  background-color: rgb(212, 85, 76,.5);
+  visibility: visible; 
 }
 
 .minibild{
@@ -77,12 +77,11 @@ i{
 
 .navbar2 {
   visibility: hidden;
-  position: absolute;    
+  position: absolute;     
 }
 
 .navbar2 ul {
   display: flex;
-  justify-content: center;
   list-style: none
 }
 
@@ -141,7 +140,7 @@ nav li{         /* Denna behövs för länk-effekten som visas när man sveper �
 nav a::before{  /* Denna behövs för länk-effekten som visas när man sveper över länkarna i headern. */
   content: '';
   display: block;
-  height: 5px;
+  height: 4px;
   width: 100%;
   background-color: rgb(7, 61, 208);
   
@@ -149,7 +148,7 @@ nav a::before{  /* Denna behövs för länk-effekten som visas när man sveper �
   top: 0;
   width: 0%;
 
-  transition: all ease-in-out 200ms;
+  transition: all ease-in-out 500ms;
 }
 
 nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man sveper över länkarna i headern. */
@@ -157,35 +156,37 @@ nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man 
 }
 
 .card{
-  /* margin: 1rem; */
   flex-basis: 50%;
   overflow-y: auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  
+  height: auto;
+  max-height: 95%;  
 }
 
 .card img{
   border-top-right-radius: 10%;
   border-top-left-radius: 10%;
   width: 70%;
-  
+    
 }
 
 .indexcard{
   background-color: white;
-   padding: 1rem;
+   padding: 0rem 1rem 1rem 1rem;
    width: 70%;
-   height: auto;
+   height: 100%;
    border-bottom-left-radius: 10%;
-   border-bottom-right-radius: 10%;  
-}
+   border-bottom-right-radius: 10%;
+   text-align: center;
+  }
 
 .cardparagraf{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: medium;
+  font-size: small;
+  text-align: left;
 }
 
 .section{       /* Huvudfönstret, väljer position för denna och centrerar motiv som standard genom flexbox-lösning. */
@@ -201,14 +202,21 @@ nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man 
   gap: 0.5rem 0;
   }
 
+  #root{
+    height: 100%;
+    width: 100%;
+  }
 
   .more {display: none;}
 
   .myBtn{
-      background-color: blue;
+      background-color: rgb(7, 61, 208);
       color: white;
-      
-  }
+      border-radius: 10%;
+      width: 6rem;
+      height: 2rem;
+      font-size: medium;
+  }  
 
 
 form{           /* Sätter en mall för de "forms" som vi kommer använda. */
@@ -222,24 +230,77 @@ form{           /* Sätter en mall för de "forms" som vi kommer använda. */
   font-family: 'Courier New', Courier, monospace;
   padding: 1rem;
   border-radius: 10%;
-}   
+}  
+
+.popup {
+  background-color: grey;
+  width: 25rem;
+  border-radius: 10%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 1rem 1rem;
+  color: #fff;
+  visibility: hidden;
+  transition: transform left 0.4s;
+}
+
+.popup h2 {
+font-size: xx-large;
+font-weight: 500;
+margin: 0.3rem 0.1rem;
+color: #fff;
+}
+
+.popup button{
+  width: 40%;
+  margin-top: 2rem;
+  padding: 0.5rem;
+background: #6fd649;
+color: #fff;
+border: 0;
+outline: 0;
+font-size: 2em;
+border-radius: 10%;
+cursor: pointer;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.open-popup{
+  visibility: visible;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+  width: 5rem;
+  margin-top: -2.5rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
 
 .aside{         /* Väljer position för vår aside. samt bakgrund och textformat. */
   grid-row-start: 2;
   grid-row-end: span3;
   grid-column-start: 5;
-  grid-column-end: 6;
+  grid-column-end: 5;
   text-align: center;
   align-items: center;
   background: rgb(212, 85, 76,.5);
   color: yellow; 
   font-size: 40px;
-}
+  }
 
 .aside img{     /* Lägger bilder och text centrerat i vår aside */
   margin-top: 1rem;
   margin-bottom: 1.5rem;
+  height: 7rem;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgb(7, 61, 208);
 }
 .aside h6{
   margin: auto;
@@ -257,7 +318,7 @@ form{           /* Sätter en mall för de "forms" som vi kommer använda. */
   justify-content: space-between;
   text-align: center; 
   align-items: center;
-}
+  }
 
 .footer img{    /* Placerar loggan rätt och presenterar den i rätt storlek. */
   border-radius: 50%;
@@ -342,15 +403,29 @@ a:active{
   .container {grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       grid-template-rows: 4rem 1fr 1fr 4rem;}
 
-
+.card {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
 
 .section  {
   flex-direction: column;
+  /* justify-content: flex-start; */
+  font: 0.8em sans-serif;
+  grid-column-end: span 5;
+  overflow-y: scroll;
+}
+
+.sectionIndex  {
+  flex-direction: column;
+  display: flex;
   justify-content: flex-start;
   font: 0.8em sans-serif;
   grid-column-end: span 5;
   overflow-y: scroll;
 }
+
+
 
 .omkl {
   flex-direction: column;
@@ -375,45 +450,78 @@ a:active{
   } 
 
   .header-mini{
-visibility: visible;
-position: relative;
+  visibility: visible;
+  position: relative;
+  background-color: rgb(212, 85, 76,.5); 
   }
 
-.header {
+  .header {
+  position: absolute;
   visibility: hidden;
   }
 
   .headers{
+    grid-column-start: 1;
+    grid-column-end: span 5;
+    visibility: visible;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    top: 0;
+    background-color: rgb(212, 85, 76,.5);
+    font-size: x-small;
     min-height: 4rem;
+    text-shadow: 2px 2px rgb(16, 31, 168);
+    color: white;
+    align-items: flex-start;
+    
   }
 
+  .headers img{
+  height: auto;
+  margin: 0.5rem;
+}
+
 .navbar2 {
+  position: absolute;
   grid-column: 1 / span 5;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   visibility: visible;
-  align-items: flex-start;   
-      
-}
+  align-items: flex-start;
+  margin-right: 0.5rem;
+  }
 
 .navbar2 ul {
   display: none;
   flex-direction: column;
   width: 100%;
-  
+  text-shadow: none;
+  font-size: small;
+}
+
+.footertext{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
   
 }
 
-.minibild{
+.minibild {
   visibility: visible;
-  position: absolute;
   right: 0;
-  width: 10%;
+  width: 100%;
   border-radius: 50%;
   height: auto;
-  margin: 0.5rem;
-  
-  
+  margin: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
 }
 
 .navbar2 ul.show {
@@ -428,8 +536,17 @@ position: relative;
   height: auto;    
 }
 
+
 .my-button {
   display: block;       
+}
+
+.fejkburger{
+  visibility: hidden;
+  font-size: 30px;
+  margin-left: 32px;
+  float: left;
+  line-height: 70px;
 }
 
 .nav li {
@@ -437,9 +554,8 @@ position: relative;
 }
 
  .footer {
-  font-size: x-small;
   min-height: 4rem;
-}
+  }
 
 .footer img {
   width: 10%;
@@ -450,6 +566,23 @@ position: relative;
   visibility: hidden;
 }
 
+.indexcard{
+  padding-bottom: 1rem;
+}
 
+.footertext{
+  font-size: small;
+}
+
+.bild {
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  width: 10%;
+  
+}
 
 }

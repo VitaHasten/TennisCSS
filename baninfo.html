@@ -15,39 +15,45 @@
       crossorigin="anonymous"
     />
   </head>
+
   <body>
     <div class="container">
+      <div class="header">
+        <img src="img/huvudsida.png" alt="Klubbloggan" />
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="omkl.html">Omklädningsrum</a></li>
+            <li><a href="baninfo.html">Baninformation</a></li>
+            <li><a href="kalender.html">Kalender</a></li>
+          </ul>
+        </nav>
+        <img src="img/huvudsida.png" alt="Klubbloggan" />
+      </div>
+
       <div class="headers">
-        <div class="header-mini">
-          <div class="navbar2">
-            <button class="my-button" id="my-button">
-              <i class="far fa-bars"></i>
-            </button>
-            <ul id="mynav">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="omkl.html">Omklädningsrum</a></li>
-              <li><a href="baninfo.html">Baninformation</a></li>
-              <li><a href="kalender.html">Kalender</a></li>
-            </ul>
-          </div>
-          <img src="img/huvudsida.png" alt="Klubbloggan" class="minibild" />
+        <div class="navbar2">
+          <button class="my-button" id="my-button">
+            <i class="far fa-bars"></i>
+          </button>
+          <ul id="mynav" class="mynav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="omkl.html">Omklädningsrum</a></li>
+            <li><a href="baninfo.html">Baninformation</a></li>
+            <li><a href="kalender.html">Kalender</a></li>
+          </ul>
         </div>
-        <div class="header">
-          <img src="img/huvudsida.png" alt="Klubbloggan" />
-          <nav>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="omkl.html">Omklädningsrum</a></li>
-              <li><a href="baninfo.html">Baninformation</a></li>
-              <li><a href="kalender.html">Kalender</a></li>
-            </ul>
-          </nav>
-          <img src="img/huvudsida.png" alt="Klubbloggan" />
+        <div class="fejkburger">
+          <i class="far fa-bars"></i>
+        </div>
+        <div class="footertext">Välkommen till Trollbäckens Tennisklubb!</div>
+        <div class="bild">
+          <img src="img/huvudsida.png" alt="Klubbloggan" class="minibild" />
         </div>
       </div>
 
       <div class="section">
-        <form onsubmit="sendEmail(); reset(); return false; ">
+        <form name="formOne" id="formOne" onsubmit="{ validateForm()}">
           <div>
             <label for="sport1">Jag vill spela:</label>
             <input type="radio" id="sport1" name="sport" required />Tennis
@@ -57,20 +63,16 @@
 
           <div>
             <label for="speltid">Spellängd timmar:</label>
-            <input
-              type="number"
-              id="speltid"
-              name="speltid"
-              min="1"
-              max="3"
-              value="1"
-              required
-            />
+            <select id="speltid" name="speltid">
+              <option value="ett">1</option>
+              <option value="tva">2</option>
+              <option value="tre">3</option>
+            </select>
           </div>
 
           <div>
             <label for="datum">Datum:</label>
-            <input type="date" id="datum" name="datum" required />
+            <input type="date" id="datum" name="datum" required default />
             <label for="tid">Tid:</label>
             <input
               type="time"
@@ -80,6 +82,8 @@
               max="20:00"
               step="3600"
               required
+              default
+              value="07:00"
             />
           </div>
 
@@ -108,16 +112,24 @@
           <div>
             <label for="phone">Mobilnummer:</label>
             <input
-              type="text"
+              type="tel"
               id="phone"
               name="phone"
               placeholder="07XXXXXXXX"
               required
+              maxlength="10"
+              size="10"
             />
-            <input type="submit" style="margin: 1rem" />
+            <button type="submit">Boka!</button>
             <input type="reset" style="margin: 1rem" />
           </div>
         </form>
+        <div class="popup" id="popup">
+          <img src="/img/check.png" />
+          <h2>Tack!</h2>
+          <p>Din bokning är härmed bekräftad!</p>
+          <button type="button" onclick="closePopup()">OK</button>
+        </div>
       </div>
 
       <div class="aside">
@@ -142,5 +154,6 @@
     </div>
 
     <script type="text/javascript" src="/js/js.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Sveriges vassaste tennisklubb!" />
-    <title>Trollbäckens Tennisklubb</title>
+    <title>Trollbäckens Tennisklubb - Huvudsida</title>
     <link rel="icon" href="img/huvudsida.png" />
     <link rel=" stylesheet" href="css/style.css" />
+    <!-- Nedan behövs för hamburgermenyn i responsivt läge ska fungera. -->
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -15,57 +16,70 @@
       crossorigin="anonymous"
     />
   </head>
+
   <body>
     <div class="container">
+      <!-- Vanlig header för laptops, denna blir "hidden" när fönstret förminskas. -->
+      <div class="header">
+        <img src="img/huvudsida.png" alt="Klubbloggan" />
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="omkl.html">Omklädningsrum</a></li>
+            <li><a href="baninfo.html">Baninformation</a></li>
+            <li><a href="kalender.html">Kalender</a></li>
+          </ul>
+        </nav>
+        <img src="img/huvudsida.png" alt="Klubbloggan" />
+      </div>
+
+      <!-- Här är den andra headern som är hidden för laptops och blir visible när storleken förminskas.
+      Navbaren förändras och blir en hamburgermeny. -->
       <div class="headers">
-        <div class="header-mini">
-          <div class="navbar2">
-            <button class="my-button" id="my-button">
-              <i class="far fa-bars"></i>
-            </button>
-            <ul id="mynav">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="omkl.html">Omklädningsrum</a></li>
-              <li><a href="baninfo.html">Baninformation</a></li>
-              <li><a href="kalender.html">Kalender</a></li>
-            </ul>
-          </div>
-          <img src="img/huvudsida.png" alt="Klubbloggan" class="minibild" />
+        <div class="navbar2">
+          <button class="my-button" id="my-button">
+            <i class="far fa-bars"></i>
+          </button>
+          <ul id="mynav" class="mynav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="omkl.html">Omklädningsrum</a></li>
+            <li><a href="baninfo.html">Baninformation</a></li>
+            <li><a href="kalender.html">Kalender</a></li>
+          </ul>
         </div>
-        <div class="header">
-          <img src="img/huvudsida.png" alt="Klubbloggan" />
-          <nav>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="omkl.html">Omklädningsrum</a></li>
-              <li><a href="baninfo.html">Baninformation</a></li>
-              <li><a href="kalender.html">Kalender</a></li>
-            </ul>
-          </nav>
-          <img src="img/huvudsida.png" alt="Klubbloggan" />
+        <div class="fejkburger">
+          <i class="far fa-bars"></i>
+        </div>
+        <div class="footertext">Välkommen till Trollbäckens Tennisklubb!</div>
+        <div class="bild">
+          <img src="img/huvudsida.png" alt="Klubbloggan" class="minibild" />
         </div>
       </div>
 
-      <div class="section">
+      <!-- Två "cards" med nyheter. En "läsmer-knapp" som manövreras med Javascript från js.js. -->
+      <div class="sectionIndex">
         <div class="card">
-          <img src="/img/clothes.jpg" alt="Avatar" />
+          <img
+            src="/img/clothes.jpg"
+            alt="Två herrar med snygga tenniskläder"
+          />
           <div class="indexcard">
-            <h3><b>Nya höstplagg i shopen!</b></h3>
+            <h3><strong>Nya höstplagg i shopen!</strong></h3>
             <p class="cardparagraf">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
               excepturi repellat numquam facilis molestias vitae non recusandae
-              neque pariatur, eum quae laborum perferendis dolore dicta,
-              provident explicabo incidunt id, iure inventore omnis? Eligendi
-              doloremque illum sint corporis ut facilis, eius voluptatum
-              voluptatem enim consequuntur soluta, <span id="dots1">...</span
-              ><span id="more1" class="more"
-                >neque veritatis pariatur quisquam modi repellendus saepe
-                numquam quia inventore officia ex placeat fugit eveniet
-                nobis!<br /><br />Aliquid nobis odit beatae nam fuga enim, sed,
-                vitae quod distinctio, at ab laboriosam optio? Et nemo fuga,
-                consectetur provident porro non rerum quas soluta eaque
-                aspernatur quo sint corporis molestiae, voluptates, cupiditate
-                eos totam deserunt impedit ullam culpa!</span
+              neque pariatur, <span id="dots1">...</span
+              ><span id="more1" class="more">
+                eum quae laborum perferendis dolore dicta, provident explicabo
+                incidunt id, iure inventore omnis? Eligendi doloremque illum
+                sint corporis ut facilis, eius voluptatum voluptatem enim
+                consequuntur soluta, neque veritatis pariatur quisquam modi
+                repellendus saepe numquam quia inventore officia ex placeat
+                fugit eveniet nobis!<br /><br />Aliquid nobis odit beatae nam
+                fuga enim, sed, vitae quod distinctio, at ab laboriosam optio?
+                Et nemo fuga, consectetur provident porro non rerum quas soluta
+                eaque aspernatur quo sint corporis molestiae, voluptates,
+                cupiditate eos totam deserunt impedit ullam culpa!</span
               >
             </p>
             <button onclick="buttonOne()" class="myBtn" id="myBtn1">
@@ -73,27 +87,28 @@
             </button>
           </div>
         </div>
+
         <div class="card">
-          <img src="/img/lisa.jpg" alt="Avatar" />
+          <img src="/img/lisa.jpg" alt="Leende Lisa med sitt racket" />
           <div class="indexcard">
-            <h3><b>Molly sålde 800 bingolotter i helgen!</b></h3>
+            <h3><strong>Molly sålde 800 lotter i helgen!</strong></h3>
             <p class="cardparagraf">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore,
               neque iste minima facilis asperiores eius quidem architecto
-              officia, hic autem voluptatibus aliquam doloremque reiciendis
-              esse. Quod, neque accusantium et laborum dolorum eos veritatis
-              corporis rerum. <span id="dots2">...</span
-              ><span id="more2" class="more"
-                >Itaque explicabo saepe a ipsum iusto pariatur repudiandae,
-                reprehenderit quo, ab ratione eos totam maiores! beatae cum, a
-                officia libero, sapiente, veniam voluptas iure corrupti fuga
-                atque hic amet rerum esse deleniti eos porro. <br /><br />Lorem
-                ipsum dolor, sit amet consectetur adipisicing elit. Officia
-                blanditiis harum aut odit aliquid expedita dolorem odio laborum
-                nesciunt repellat doloribus quibusdam sunt fuga explicabo, atque
-                consectetur! Praesentium, harum. Veniam, modi? Quasi assumenda,
-                officia at aperiam iure inventore adipisci! Beatae sit sunt
-                dolores officiis quisquam aliquid aperiam consequatur expedita
+              officia, hic autem voluptatibus<span id="dots2">...</span
+              ><span id="more2" class="more">
+                aliquam doloremque reiciendis esse. Quod, neque accusantium et
+                laborum dolorum eos veritatis corporis rerum. Itaque explicabo
+                saepe a ipsum iusto pariatur repudiandae, reprehenderit quo, ab
+                ratione eos totam maiores! beatae cum, a officia libero,
+                sapiente, veniam voluptas iure corrupti fuga atque hic amet
+                rerum esse deleniti eos porro. <br /><br />Lorem ipsum dolor,
+                sit amet consectetur adipisicing elit. Officia blanditiis harum
+                aut odit aliquid expedita dolorem odio laborum nesciunt repellat
+                doloribus quibusdam sunt fuga explicabo, atque consectetur!
+                Praesentium, harum. Veniam, modi? Quasi assumenda, officia at
+                aperiam iure inventore adipisci! Beatae sit sunt dolores
+                officiis quisquam aliquid aperiam consequatur expedita
                 cumque!</span
               >
             </p>
@@ -104,6 +119,7 @@
         </div>
       </div>
 
+      <!-- Sidomeny, försvinner i mobilvy. -->
       <div class="aside">
         <a
           href="https://www.google.com/maps/place/Trollb%C3%A4ckens+Tennisklubb/@59.2480818,18.2400744,15z/data=!4m2!3m1!1s0x0:0x6ea1c15acd710652?sa=X&ved=2ahUKEwjh0uOt4pn7AhWIuIsKHTLIC7QQ_BJ6BAhcEAU"
@@ -111,8 +127,8 @@
         >
           <img
             src="img/karta.png"
-            alt="Karta över vår anläggning"
-            style="height: 7rem; border-radius: 50%"
+            alt="Kartbild över vår anläggning"
+            class="kartan"
           />
         </a>
         <h6>Hitta till oss!</h6>
@@ -124,7 +140,6 @@
         <img src="img/huvudsida.png" alt="Klubbloggan" />
       </div>
     </div>
-
     <script type="text/javascript" src="/js/js.js"></script>
   </body>
 </html>
