@@ -76,6 +76,28 @@ function validateForm() {
 }
 
 
+
+
+function validateForm2() {
+  event.preventDefault();
+  let c = document.forms["formOne"]["phone"].value;
+  if (!(c.length == 10)) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oj...',
+      text: 'Det angivna telefonnumret innehåller inte 10 st siffror.',
+      })
+    return false;
+  }
+
+  else
+  {
+    openPopup2();
+    return true;
+  }
+}
+
+
 function openPopup(){
 
 let popup = document.getElementById("popup")
@@ -94,7 +116,26 @@ resultat.innerHTML="Namn: "+namnTd+"<br/>"+"Sport: "+sportTd+"<br/>"+"Spellängd
 
 }
 
+
+
+
+function openPopup2(){
+console.log("open popup2 körs");
+  let popup = document.getElementById("popup")
+  
+  let namnTd=document.getElementById("fname").value+(" ")+document.getElementById("lname").value;
+  let datumTd=document.getElementById("datum").value;
+  let tidTd=document.getElementById("tid").value;
+  let phoneTd=document.getElementById("phone").value;
+  
+  popup.classList.add("open-popup")
+  
+  const resultat = document.getElementById("resultat");
+  resultat.innerHTML="Namn: "+namnTd+"<br/>"+"Datum: "+datumTd+"<br/>"+"Tid: "+tidTd+"<br/>"+"Mobilnummer: "+phoneTd+"<br/>";
+  
+  }
+
 function closePopup(){
-  popup.classList.remove("open-popup")
+    popup.classList.remove("open-popup")
 }
   
