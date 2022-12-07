@@ -56,15 +56,11 @@
         <form name="formOne" id="formOne" onsubmit="{ validateForm()}">
           <div>
             <label for="sport1">Jag vill spela:</label>
-            <input
-              type="radio"
-              id="sport1"
-              name="sport"
-              required
-              value="Tennis"
-            />Tennis
-            <input type="radio" id="sport2" name="sport" required />Padel
-            <input type="radio" id="sport3" name="sport" required />Badminton
+            <select id="sport1" name="sport1">
+              <option value="Tennis">Tennis</option>
+              <option value="Padel">Padel</option>
+              <option value="Badminton">Badminton</option>
+            </select>
           </div>
 
           <div>
@@ -138,6 +134,13 @@
           <span id="resultat"></span>
           <button type="button" class="okKnapp" onclick="closePopup()">
             OK
+          </button>
+          <button
+            type="button"
+            class="okKnapp"
+            onclick=" location.href='index.html';"
+          >
+            Home
           </button>
         </div>
       </div>

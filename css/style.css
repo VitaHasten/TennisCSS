@@ -235,10 +235,15 @@ nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man 
       width: 6rem;
       height: 2rem;
       font-size: medium;
-  }  
+  }
 
-
-form{           /* Sätter en mall för de "forms" som vi kommer använda. */
+  .myBtn:hover {
+    text-decoration: none;
+    color:white;
+    background: #4b48f8;
+  }
+  
+ form{           /* Sätter en mall för de "forms" som vi kommer använda. */
   width: auto;
   height: auto;
   line-height: 1.6;
@@ -276,6 +281,8 @@ color: #fff;
 .popup button{
   width: 40%;
   margin-top: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
   padding: 0.5rem;
 background-color: rgb(111, 176, 31);
 color: #fff;

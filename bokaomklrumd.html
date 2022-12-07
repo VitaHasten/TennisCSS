@@ -53,7 +53,12 @@
       </div>
 
       <div class="section">
-        <form style="border-color: red">
+        <form
+          name="formOne"
+          id="formOne"
+          style="border-color: red"
+          onsubmit="{ validateForm2()}"
+        >
           <div>
             <label for="datum">Datum</label>
             <input type="date" id="datum" name="datum" required />
@@ -64,8 +69,10 @@
               name="tid"
               min="07:00"
               max="20:00"
-              step="1800"
+              step="3600"
               required
+              default
+              value="07:00"
             />
           </div>
 
@@ -91,7 +98,20 @@
             />
           </div>
 
-          <div><input type="submit" />&emsp;<input type="reset" /></div>
+          <div>
+            <label for="phone">Mobilnummer:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="07XXXXXXXX"
+              required
+              maxlength="10"
+              size="10"
+            />
+            <button type="submit">Boka!</button>
+            <input type="reset" style="margin: 1rem" />
+          </div>
           <h3
             style="
               color: yellow;
@@ -102,6 +122,23 @@
             Boka damernas omklädningsrum
           </h3>
         </form>
+        <div class="popup" id="popup">
+          <img src="/img/check.png" />
+          <h2>Tack!</h2>
+          <p>Din bokning är härmed bekräftad!</p>
+          <hr />
+          <span id="resultat"></span>
+          <button type="button" class="okKnapp" onclick="closePopup()">
+            OK
+          </button>
+          <button
+            type="button"
+            class="okKnapp"
+            onclick=" location.href='index.html';"
+          >
+            Home
+          </button>
+        </div>
       </div>
 
       <div class="aside">
@@ -125,5 +162,6 @@
       </div>
     </div>
     <script type="text/javascript" src="/js/js.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
