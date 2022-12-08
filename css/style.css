@@ -268,7 +268,8 @@ nav a:hover::before{    /* Denna behövs för länk-effekten som visas när man 
   padding: 0 1rem 1rem;
   color: #fff;
   visibility: hidden;
-  transition: transform left 0.4s;
+  transition-delay: 2s;
+  transition: transform 0.8s;
 }
 
 .popup h2 {

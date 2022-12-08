@@ -69,7 +69,7 @@ function validateForm() {
 
   else
   {
-    openPopup();
+    setTimeout(openPopup, 500);
     return true;
   }
 }
@@ -91,7 +91,7 @@ function validateForm2() {
 
   else
   {
-    openPopup2();
+    setTimeout(openPopup2, 500);
     return true;
   }
 }
