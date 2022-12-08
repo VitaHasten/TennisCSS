@@ -1,6 +1,8 @@
 // Index-sidan innehåller två cards med två knappar för "läs-mer" och har likadan kod. 
 // För att koden ska veta vilket card som ska öppnas vid knapptryck har jag skapat denna funktion som håller i sär detta.
 
+/*jslint browser:true */
+
 function buttonOne(){
   myFunction("one");
 }
@@ -10,7 +12,7 @@ function buttonTwo(){
 
 function myFunction(buttonName) 
 {
-  if(buttonName == "one")
+  if(buttonName === "one")
     {
       var dots = document.getElementById("dots1");
       var moreText = document.getElementById("more1");
@@ -140,4 +142,3 @@ console.log("open popup2 körs");
 function closePopup(){
     popup.classList.remove("open-popup")
 }
-  
