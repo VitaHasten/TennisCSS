@@ -1,10 +1,12 @@
+// Index-sidan innehåller två cards med två knappar för "läs-mer" och har likadan kod. 
+// För att koden ska veta vilket card som ska öppnas vid knapptryck har jag skapat denna funktion som håller i sär detta.
+
 function buttonOne(){
   myFunction("one");
 }
 function buttonTwo(){
   myFunction("two");
 }
-
 
 function myFunction(buttonName) 
 {
@@ -35,6 +37,8 @@ function myFunction(buttonName)
     }
 }
 
+// Denna funktion används när hamburgermenyn i responsivt läge "vecklas ut".
+
 const button = document.getElementById("my-button");
 const nav = document.getElementById("mynav");
 
@@ -42,20 +46,15 @@ button.addEventListener('click', () => {
 nav.classList.toggle('show');
 });
 
+// Validering för mina formulär. Kontrollerar att telefonnumret innehåller exakt 10 st siffror.
+// Då jag har flera formulär och de innehåller olika parametrar, så finns det flera valideringsfunktioner.
+// När telefonnumret fylts i på ett korrekt sätt så anropas en ny funktion som poppar upp en bekräftelsebild
+// och sammanfattning på den lagda bokningen. 
+
+// Validering 1
+
 function validateForm() {
   event.preventDefault();
-  // let a = document.forms["formOne"]["fname"].value;
-  
-  // if (a == "") {
-  //   alert("Förnamn saknas...");
-  //   return false;
-  // }
-
-  // let b = document.forms["formOne"]["lname"].value;
-  // if (b == "") {
-  //   alert("Efternamn saknas...");
-  //   return false;
-  // }
 
   let c = document.forms["formOne"]["phone"].value;
   console.log(!c.length == 10);
@@ -75,7 +74,7 @@ function validateForm() {
   }
 }
 
-
+// Validering 2
 
 
 function validateForm2() {
@@ -97,6 +96,9 @@ function validateForm2() {
   }
 }
 
+// Popup-funktionen som nämns ovan.
+
+// Popup 1
 
 function openPopup(){
 
@@ -116,7 +118,7 @@ resultat.innerHTML="Namn: "+namnTd+"<br/>"+"Sport: "+sportTd+"<br/>"+"Spellängd
 
 }
 
-
+// Popup 2
 
 
 function openPopup2(){
